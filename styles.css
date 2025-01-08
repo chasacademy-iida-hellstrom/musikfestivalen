@@ -1,0 +1,296 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.festival-header {
+  background-color: #ffcccb;
+  color: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.festival-header h1 {
+  font-family: "Londrina Shadow";
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.festival-header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.festival-header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.festival-header nav a:hover {
+  color: #ff6f61;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #ffcccb, #ff6f61);
+  color: white;
+  text-align: center;
+  min-height: 67vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.hero-section h2 {
+  font-size: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: white;
+  color: #ff6f61;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff6f61;
+  color: white;
+}
+
+.artist-section,
+.stage-section,
+.schedule-section {
+  background-color: #ffeedd;
+  padding: 60px 20px;
+}
+
+.artist-section h2,
+.schedule-section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  
+}
+
+
+.artist-card {
+  background: rgb(251, 236, 236);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+}
+
+
+
+.artist-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.stage-card {
+  padding: 10px;
+  margin: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.day-section {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.day-section h2 {
+  font-size: 1.5rem;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.festival-footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+.festival-footer a {
+  color: #ffcccb;
+  text-decoration: none;
+}
+
+.festival-footer a:hover {
+  text-decoration: underline;
+}
+
+.day-name {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.day-date {
+  display: block;
+  font-size: 1rem;
+  color: #ff6f61;
+}
+
+.day-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.day-button {
+  display: inline-block;
+  margin: 5px;
+  font-size: 1.2rem;
+  border: 1px solid #ff6f61;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  border-radius: 5px;
+
+  padding: 8px 16px;
+  color: #ff6f61;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.day-button:hover {
+  background-color: #ff6f61;
+  color: white;
+}
+
+.day-section {
+  padding: 5px;
+  border: 1px solid #eee;
+  margin: 10px 0;
+  background-color: #fefefe;
+}
+
+.schedule-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px 20px;
+  min-height: 50vh;
+}
+
+.schedule-section p,
+.schedule-section h2 {
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-width: 450px) {
+  .festival-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .festival-header nav a {
+    font-size: 1rem;
+  }
+
+  .hero-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 6px 12px;
+  }
+
+  .artist-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .stage-card {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .schedule-section {
+    padding: 60px 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .festival-header h1 {
+    font-size: 3.5rem;
+  }
+
+  .festival-header nav ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .schedule-section {
+    flex-direction: row;
+    gap: 20px;
+    height: auto;
+    padding: 40px 10px;
+  }
+
+  .day-section {
+    flex: 1 1 45%;
+    padding: 20px;
+  }
+
+  .day-name {
+    font-size: 1.8rem;
+  }
+
+  .day-date {
+    font-size: 1.1rem;
+  }
+
+  .day-button {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+  }
+}

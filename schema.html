@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artister - Musikfestivalen Stockholm</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Poppins:wght@400;600&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="festival-header">
+      <div class="container">
+        <h1>Musikfestivalen Stockholm</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html" aria-label="Till startsidan">Start</a></li>
+            <li>
+              <a href="artister.html" aria-label="Se artister">Artister</a>
+            </li>
+            <li><a href="scener.html" aria-label="Se scener">Scener</a></li>
+            <li>
+              <a href="schema.html" aria-label="Se spelschema">Spelschema</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="schedule-section">
+        <div class="container">
+          <h2>Spelschema</h2>
+          <p>
+            Här hittar du alla artister och deras spelningar under festivalen.
+          </p>
+          <div id="posts-container"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="festival-footer">
+      <div class="container">
+        <p>&copy; 2024 Musikfestivalen Stockholm.</p>
+      </div>
+    </footer>
+    <script src="schema.js"></script>
+  </body>
+</html>
