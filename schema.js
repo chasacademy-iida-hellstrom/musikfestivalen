@@ -5,6 +5,19 @@ const ACCESS_TOKEN = localStorage.getItem("access_token");
 
 const apiURL = `${baseUrl}${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}&content_type=artist&include=3`;
 
+const artistImages = {
+  "3EaJyvMEJZn0SEujFTAfhh": "images/ariana.jpg",
+  "3h10Md9vCJztB4LVWq4SZw": "images/weeknd.jpg",
+  "3dfDAlSCyLOEMjnLYRHDW3": "images/travis.jpg",
+  "6uOdMg1FwV2X0XzMbsRTqI": "images/snarky.jpg",
+  "4Jg8p2V4BRWHUWpMJTmLVb": "images/imagine.png",
+  "3POGTLp40vViwu3PYg4ZQs": "images/lumineers.jpg",
+  "1s4kb4NRwcIxXtH43ZwG2a": "images/Drake.jpg",
+  "2y2H4WReTkLEuIsXb8TuV2": "images/billie.jpg",
+  "1kYPDZKvt1jknL0g37RDnJ": "images/slipknot.jpg",
+  "1m6BKmWSVKkcanEncErKQv": "images/metallica.jpg",
+};
+
 const fetchData = async () => {
   try {
     const response = await fetch(apiURL);
@@ -48,6 +61,8 @@ const fetchData = async () => {
             ? new Date(dateEntry.fields.date).toLocaleDateString("sv-SE")
             : "Inget datum";
 
+        const imageUrl = artistImages[artist.sys.id] || "images/default.jpg";
+
         return {
           name: artist.fields.name,
           genre: genre ? genre.fields.name : "Ingen genre",
@@ -55,6 +70,7 @@ const fetchData = async () => {
           day: dayName,
           date: date,
           description: artist.fields.description,
+          imageUrl: imageUrl,
         };
       })
       .filter((artist) => artist !== null);
@@ -71,32 +87,39 @@ const fetchData = async () => {
 
     let postHTML = `<div class="day-buttons">`;
 
-    ["Friday", "Saturday", "Sunday"].forEach((day) => {
-      if (groupedByDay[day]) {
-        const date = groupedByDay[day].date || "Inget datum";
-        postHTML += `<button class="day-button" data-day="${day.toLowerCase()}">${day} <br> ${date}</button>`;
-      }
-    });
-
+    postHTML += ["Friday", "Saturday", "Sunday"]
+      .map((day) => {
+        if (groupedByDay[day]) {
+          const date = groupedByDay[day].date || "Inget datum";
+          return `<button class="day-button" data-day="${day.toLowerCase()}">${day} <br> ${date}</button>`;
+        }
+        return "";
+      })
+      .join("");
     postHTML += `</div>`;
 
-    Object.keys(groupedByDay).forEach((day) => {
-      const date = groupedByDay[day].date || "Inget datum";
-      postHTML += `<div class="day-section" id="${day.toLowerCase()}" style="display: none;">
-                <h2><span class="day-name">${day}</span> <span class="day-date">${date}</span></h2>
-                <div class="artist-cards">`;
-
-      groupedByDay[day].artists.forEach((artist) => {
-        postHTML += `
+    postHTML += Object.keys(groupedByDay)
+      .map((day) => {
+        const date = groupedByDay[day].date || "Inget datum";
+        return `
+          <div class="day-section" id="${day.toLowerCase()}" style="display: none;">
+            <h2><span class="day-name">${day}</span> <span class="day-date">${date}</span></h2>
+            <div class="artist-cards">
+              ${groupedByDay[day].artists
+                .map((artist) => {
+                  return `
                     <div class="artist-card">
+                        <img src="${artist.imageUrl}" alt="${artist.name}" class="artist-image-custom" />
                         <h3>${artist.name}</h3>
                         <p><strong>Genre:</strong> ${artist.genre}</p>
                         <p><strong>Scen:</strong> ${artist.stage}</p>
                     </div>`;
-      });
-
-      postHTML += `</div></div>`;
-    });
+                })
+                .join("")}
+            </div>
+          </div>`;
+      })
+      .join("");
 
     postContainer.innerHTML = postHTML;
 

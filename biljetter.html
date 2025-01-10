@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artister - Musikfestivalen Stockholm</title>
+    <title>Musikfestivalen Stockholm</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Poppins:wght@400;600&family=Patrick+Hand&display=swap"
@@ -26,14 +26,23 @@
       </div>
     </header>
 
-    <section class="artist-section">
-      <div class="container">
-        <h2>Artister</h2>
-        <p>
-          Här hittar du alla fantastiska artister som deltar i Musikfestivalen
-          Stockholm.
-        </p>
-        <div id="posts-container"></div>
+    <section id="hero" class="hero-section">
+      <div class="tickets-container">
+        <h2>Köp biljetter</h2>
+        <div class="ticket-card">
+          <h3>Standardbiljett</h3>
+          <p>Pris: 500 kr</p>
+          <button class="buy-btn" onclick="buyTicket('Standardbiljett', 500)">
+            Köp nu
+          </button>
+        </div>
+        <div class="ticket-card">
+          <h3>VIP-biljett</h3>
+          <p>Pris: 1200 kr</p>
+          <button class="buy-btn" onclick="buyTicket('VIP-biljett', 1200)">
+            Köp nu
+          </button>
+        </div>
       </div>
     </section>
 
@@ -42,6 +51,5 @@
         <p>&copy; 2024 Musikfestivalen Stockholm.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
   </body>
 </html>

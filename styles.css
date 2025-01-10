@@ -104,9 +104,7 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   justify-items: center;
-  
 }
-
 
 .artist-card {
   background: rgb(251, 236, 236);
@@ -117,19 +115,29 @@ h3 {
   margin: 10px;
 }
 
-
-
 .artist-card h3 {
   font-size: 1.2rem;
   color: #333;
 }
 
 .stage-card {
-  padding: 10px;
-  margin: 10px;
-  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2px;
+  margin: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stage-card img {
+  width: 95%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
 }
 
 .day-section {
@@ -219,13 +227,66 @@ h3 {
   flex-direction: column;
   text-align: center;
   padding: 20px 20px;
-  min-height: 50vh;
+  min-height: 60vh;
 }
 
 .schedule-section p,
 .schedule-section h2 {
   text-align: center;
   margin: 0;
+}
+
+.tickets-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+.ticket-card {
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  background-color: #ffcccb;
+  color: black;
+}
+.ticket-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.ticket-card p {
+  margin: 10px 0;
+}
+.buy-btn {
+  background-color: #f28c28;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.buy-btn:hover {
+  background-color: white;
+  color: #f87e04;
+}
+
+.artist-image {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.artist-image-custom {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: top; /* Visar övre delen av bilden */
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 450px) {
